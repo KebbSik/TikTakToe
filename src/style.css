@@ -1,26 +1,28 @@
 html {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* body{
- 
-} */
-
-.main {
-  position: fixed;
-  text-align: center;
-  border: 5px solid black;
-  padding: 3rem;
-  /* background: rgb(55, 228, 50); */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
   background: linear-gradient(
     45deg,
     rgba(55, 228, 50, 1) 0%,
     rgba(250, 235, 66, 0.448) 90%
   );
-  /* background-color: black; */
-  width: 90.5%;
-  max-width: 1200px;
+}
 
+.main {
+  position: fixed;
+  text-align: center;
+  /* border: 5px solid black; */
+  padding: 3rem;
+  /* background: rgb(55, 228, 50); */
+  /* background-color: black; */
+  /* width: 90.5%; */
+  max-width: 1200px;
+  /* display: flex; */
   height: 600px;
   transition: background 1s ease;
 }
@@ -152,20 +154,21 @@ h1 {
 }
 
 .singleMarkBox {
+  /* justify-self: center; */
   height: 150px;
   min-width: 170px;
   border: solid 3px black;
   border-radius: 25px;
   box-shadow: 7px 7px 20px 0px rgba(0, 0, 0, 0.9);
-  margin: 0 5px;
+  margin: auto 5px;
   background-color: rgb(250, 252, 163);
   display: flex;
   flex-direction: column;
-
+  /* justify-content: center; */
   align-items: center;
 }
 
-.singleMarkBox > span {
+.choose .singleMarkBox > span {
   /* color: red; */
 }
 
@@ -196,18 +199,22 @@ h1 {
 }
 
 #markSelector {
-  position: fixed;
+  position: absolute;
   top: 3px;
   /* left: 3px; */
   margin: 5px;
   background: rgba(0, 0, 0, 0.8);
   display: none;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
   height: 600px;
+  /* width: 100%; */
   z-index: 1;
 }
 
 .choose {
-  margin: 200px 35%;
+  /* margin: 200px 35%; */
   max-height: 200px;
   max-width: 30%;
   display: inherit;
@@ -260,7 +267,7 @@ h1 {
     rgb(50, 94, 228) 0%,
     rgba(250, 235, 66, 0.449) 70%
   );
-} 
+}
 
 #themeRed {
   background: linear-gradient(
@@ -271,6 +278,10 @@ h1 {
 }
 
 .wrapper {
-	display:flex;
-	justify-content:center;
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  /* height: 60%; */
+  width: 500px;
+  height: 600px;
 }
