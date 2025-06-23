@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="markSelector" class="main dom">
+        <div class="singleMarkBox choose">
+          <h2>Choose your mark</h2>
+          <span> &#60;Press any letter&#62; </span>
+        </div>
+      </div>
+
+      <div id="main" class="main">
+        <svg id="curvedTextContainer">
+          <path id="curvedPath" d="M0 150 Q250 10 500 150" fill="none" />
+          <text class="curvedText" text-anchor="middle" fill="balck">
+            <textPath href="#curvedPath" startOffset="50%">
+              Tic Tac Toe
+            </textPath>
+          </text>
+        </svg>
+        <div class="statusContainer menuStatusContainer">
+          <h2 id="menuStatus"></h2>
+        </div>
+        <div id="menuContainer" class="menuStyles visible dom">
+          <button id="startBtn" class="btn">Start</button>
+          <button id="optionsBtn" class="btn">Options</button>
+        </div>
+
+        <div id="optionsContainer" class="menuStyles dom">
+          <span class="menuLayer">
+            <button id="changeMarksBtn" class="btn">Set marks</button>
+          </span>
+          <span class="menuLayer">
+            <button id="changeTheme" class="btn">Set Theme</button></span
+          >
+          <span class="menuLayer">
+            <button id="backMainMenuBtn" class="btn backBtn">Back</button>
+          </span>
+        </div>
+
+        <div id="changeMarksCotainer" class="menuStyles center dom">
+          <span class="menuLayer rowSpan2">
+            <div class="singleMarkBox">
+              <h2>PLAYER 1</h2>
+              <button class="btn markBtn"></button>
+            </div>
+
+            <div class="singleMarkBox">
+              <h2>PLAYER 2</h2>
+              <button class="btn markBtn"></button>
+            </div>
+          </span>
+
+          <span class="menuLayer"> </span>
+          <span class="menuLayer">
+            <button id="backOptionsBtn" class="btn backBtn">Back</button>
+          </span>
+        </div>
+        <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
+
+        <div id="changeThemeCotainer" class="menuStyles center dom">
+          <span class="menuLayer">
+            <div class="themeBox">
+              <button id="themeGreen" class="btn themeBtn"></button>
+              <button id="themeBlue" class="btn themeBtn"></button>
+              <button id="themeRed" class="btn themeBtn"></button>
+            </div>
+          </span>
+
+          <span class="menuLayer"> </span>
+          <span class="menuLayer">
+            <button id="backOptionsBtn2" class="btn backBtn">Back</button>
+          </span>
+        </div>
+        <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
+        <div></div>
+
+        <div id="gameContainer" class="gameContainer dom">
+          <div id="cellsContainer">
+            <div id="0" class="cell"></div>
+            <div id="1" class="cell"></div>
+            <div id="2" class="cell"></div>
+            <div id="3" class="cell"></div>
+            <div id="4" class="cell"></div>
+            <div id="5" class="cell"></div>
+            <div id="6" class="cell"></div>
+            <div id="7" class="cell"></div>
+            <div id="8" class="cell"></div>
+          </div>
+          <!-- 297 x 37 -->
+          <div class="statusContainer">
+            <h2 id="statusText"></h2>
+          </div>
+          <button id="backMenuBtn" class="btn backBtn">
+            <i class="fa fa-home" style="font-size:36px"></i>
+          </button>
+          <button id="resetBtn" class="btn" style="font-size:36px">
+            <i class="fa fa-undo"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>

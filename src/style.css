@@ -1,0 +1,276 @@
+html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* body{
+ 
+} */
+
+.main {
+  position: fixed;
+  text-align: center;
+  border: 5px solid black;
+  padding: 3rem;
+  /* background: rgb(55, 228, 50); */
+  background: linear-gradient(
+    45deg,
+    rgba(55, 228, 50, 1) 0%,
+    rgba(250, 235, 66, 0.448) 90%
+  );
+  /* background-color: black; */
+  width: 90.5%;
+  max-width: 1200px;
+
+  height: 600px;
+  transition: background 1s ease;
+}
+
+.menuStyles {
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  row-gap: 30px;
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.5s ease, height 0.5s ease;
+}
+
+h1 {
+}
+
+#cellsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 75px);
+  width: 225px;
+  margin: auto;
+  margin-bottom: 30px;
+  line-height: 75px;
+  font-size: 60px;
+  box-shadow: 7px 7px 20px 0px rgba(0, 0, 0, 0.9);
+  /* z-index: 9999; */
+}
+
+.cell {
+  font-weight: 700;
+  background-color: #4ae77f;
+  height: 75px;
+  width: 75px;
+  cursor: pointer;
+  outline: 3px solid black;
+  transition: background-color 0.1s ease-in-out;
+  transition: font-size 0.2s ease-in-out;
+}
+
+.cell:hover {
+  background-color: #7fffaa;
+}
+.statusContainer {
+  background-color: white;
+  width: 300px;
+  justify-self: center;
+  border: solid black 3px;
+  border-radius: 45px;
+  text-decoration: wavy;
+  margin: 0 30px 30px 30px;
+  box-shadow: 7px 7px 20px 0px rgba(0, 0, 0, 0.9);
+  font-size: 16px;
+  /* transform: scale(1);
+  transition: all 2s ease-in-out; */
+}
+
+#statusText {
+  font-style: italic;
+}
+
+.btn {
+  background-color: rgb(223, 226, 40);
+  border: 3px solid black;
+  border-radius: 15px;
+  min-width: 130px;
+  height: 60px;
+  margin: auto 5px;
+  font-size: 25px;
+  font-weight: bold;
+  box-shadow: 7px 7px 20px 0px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.backBtn {
+  background-color: rgb(226, 173, 40);
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: rgb(250, 252, 163);
+  transform: scale(1.1);
+}
+
+.backBtn:hover {
+  background-color: rgb(233, 209, 150);
+}
+
+#curvedTextContainer {
+  width: 500px;
+  overflow: visible;
+  text-shadow: 5px 5px 20px white, -5px -5px 20px white, -5px 5px 20px white,
+    5px -5px 20px white;
+}
+
+.curvedText {
+  font-size: 100px;
+  text-decoration: bold;
+  font-weight: 700;
+}
+
+.menuLayer {
+  /* background-color: red; */
+  /* width: 130px; */
+  height: 50px;
+  margin: 10px 5px;
+  display: flex;
+  justify-content: center;
+}
+.menuLayer h2 {
+  margin: auto auto 0px auto;
+}
+
+.menuStatusContainer {
+  margin-bottom: 50px;
+}
+
+.menuStatusContainer #menuStatus {
+  font-size: 35px;
+  margin: 5px 0;
+  letter-spacing: 3px;
+}
+
+.rowSpan2 {
+  grid-row: span 2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.singleMarkBox {
+  height: 150px;
+  min-width: 170px;
+  border: solid 3px black;
+  border-radius: 25px;
+  box-shadow: 7px 7px 20px 0px rgba(0, 0, 0, 0.9);
+  margin: 0 5px;
+  background-color: rgb(250, 252, 163);
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.singleMarkBox > span {
+  /* color: red; */
+}
+
+.markBtn {
+  box-shadow: none;
+  max-width: 50px;
+  z-index: 10;
+}
+
+/* #menuContainer,
+#optionsContainer,
+#changeMarksCotainer {
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.5s ease, heght 0.5s ease;
+} */
+
+.gameContainer {
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.5s ease, heght 0.5s ease;
+  z-index: 999;
+}
+
+.visible {
+  opacity: 1;
+  height: auto;
+}
+
+#markSelector {
+  position: fixed;
+  top: 3px;
+  /* left: 3px; */
+  margin: 5px;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  height: 600px;
+  z-index: 1;
+}
+
+.choose {
+  margin: 200px 35%;
+  max-height: 200px;
+  max-width: 30%;
+  display: inherit;
+}
+.choose span {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.themeBox {
+  height: 150px;
+  min-width: 400px;
+  border: solid 3px black;
+  border-radius: 25px;
+  box-shadow: 7px 7px 20px 0px rgba(0, 0, 0, 0.9);
+  /* margin: 0 5px; */
+  background-color: rgb(250, 252, 163);
+  display: flex;
+  align-items: center;
+  /* gap: 20px; */
+  padding: 0 15px;
+  justify-content: space-around;
+}
+
+.themeBtn {
+  box-shadow: none;
+  height: 80px;
+  min-width: 100px;
+  border: solid 5px black;
+  border-radius: 100%;
+  z-index: 11;
+  transition: all 0.3s ease-in-out;
+}
+
+.themeBtn:hover {
+  transform: scale(1.5);
+}
+
+#themeGreen {
+  background: linear-gradient(
+    45deg,
+    rgba(55, 228, 50, 1) 0%,
+    rgba(250, 235, 66, 0.448) 70%
+  );
+}
+
+#themeBlue {
+  background: linear-gradient(
+    45deg,
+    rgb(50, 94, 228) 0%,
+    rgba(250, 235, 66, 0.449) 70%
+  );
+} 
+
+#themeRed {
+  background: linear-gradient(
+    45deg,
+    rgb(228, 50, 50) 0%,
+    rgba(250, 235, 66, 0.448) 70%
+  );
+}
+
+.wrapper {
+	display:flex;
+	justify-content:center;
+}
