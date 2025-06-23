@@ -250,17 +250,32 @@ function ShowChangeMarks() {
 }
 
 function ShowMarkSelector(player) {
-  markSelector.style.display = "block";
+  markSelector.style.display = "flex";
+
   if (keypressHandler) {
-    document.removeEventListener("keypress", keypressHandler);
+    document.removeEventListener("keydown", keypressHandler);
   }
+
   keypressHandler = (event) => {
-    console.log(event.key);
-    marks[player] = event.key.toLocaleUpperCase();
-    markSelector.style.display = "none";
-    ShowChangeMarks();
+    const key = event.key;
+
+    if (key === "Escape") {
+      markSelector.style.display = "none";
+      document.removeEventListener("keydown", keypressHandler);
+      keypressHandler = null;
+      return;
+    }
+    if (/^[a-zA-Z0-9]$/.test(key)) {
+      marks[player] = key.toUpperCase();
+      markSelector.style.display = "none";
+      ShowChangeMarks();
+
+      document.removeEventListener("keydown", keypressHandler);
+      keypressHandler = null;
+    }
   };
-  document.addEventListener("keypress", keypressHandler);
+
+  document.addEventListener("keydown", keypressHandler);
 }
 
 function ShowchangeTheme() {

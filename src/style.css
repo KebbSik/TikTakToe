@@ -11,6 +11,9 @@ body {
     rgba(55, 228, 50, 1) 0%,
     rgba(250, 235, 66, 0.448) 90%
   );
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .main {
@@ -23,7 +26,7 @@ body {
   /* width: 90.5%; */
   max-width: 1200px;
   /* display: flex; */
-  height: 600px;
+  /* height: 600px; */
   transition: background 1s ease;
 }
 
@@ -156,20 +159,17 @@ h1 {
 .singleMarkBox {
   /* justify-self: center; */
   height: 150px;
-  min-width: 170px;
+  min-width: 150px;
   border: solid 3px black;
   border-radius: 25px;
   box-shadow: 7px 7px 20px 0px rgba(0, 0, 0, 0.9);
   margin: auto 5px;
+  padding: 5px;
   background-color: rgb(250, 252, 163);
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-}
-
-.choose .singleMarkBox > span {
-  /* color: red; */
 }
 
 .markBtn {
@@ -199,17 +199,18 @@ h1 {
 }
 
 #markSelector {
-  position: absolute;
-  top: 3px;
+  position: fixed;
+  top: 0px;
   /* left: 3px; */
-  margin: 5px;
+  /* margin: 5px; */
   background: rgba(0, 0, 0, 0.8);
   display: none;
-  /* display: flex;
+  /* display: flex; */
   justify-content: center;
-  align-items: center; */
-  height: 600px;
-  /* width: 100%; */
+  align-items: center;
+  height: 101%;
+  width: 50%;
+  min-width: 200px;
   z-index: 1;
 }
 
@@ -218,15 +219,19 @@ h1 {
   max-height: 200px;
   max-width: 30%;
   display: inherit;
+  text-align: center;
+  /* font-size: 1rem; */
 }
 .choose span {
-  font-size: 20px;
+  /* font-size: 20px; */
   font-style: italic;
+  color: red;
+  font-size: 1rem;
 }
 
 .themeBox {
   height: 150px;
-  min-width: 400px;
+  min-width: 300px;
   border: solid 3px black;
   border-radius: 25px;
   box-shadow: 7px 7px 20px 0px rgba(0, 0, 0, 0.9);
@@ -283,5 +288,23 @@ h1 {
   justify-content: center;
   /* height: 60%; */
   width: 500px;
-  height: 600px;
+  max-height: 100vh;
+}
+
+/* Breakpoints */
+
+@media (max-width: 1024px) {
+  .curvedText {
+    font-size: 80px;
+  }
+}
+@media (max-width: 768px) {
+  .curvedText {
+    font-size: 70px;
+  }
+}
+@media (max-width: 480px) {
+  .curvedText {
+    font-size: 50px;
+  }
 }
