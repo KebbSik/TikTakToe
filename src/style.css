@@ -28,7 +28,7 @@ body {
   max-width: 1200px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   flex-wrap: wrap;
   /* height: 600px; */
@@ -127,6 +127,11 @@ textarea {
 
 .backBtn:hover {
   background-color: rgb(233, 209, 150);
+}
+
+.titleWrapper {
+  width: 100%;
+  min-height: 25%;
 }
 
 #curvedTextContainer {
