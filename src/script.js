@@ -252,6 +252,10 @@ function ShowChangeMarks() {
 function ShowMarkSelector(player) {
   markSelector.style.display = "flex";
 
+  const hiddenInput = document.getElementById("markInput");
+  hiddenInput.value = "";
+  hiddenInput.focus();
+
   if (keypressHandler) {
     document.removeEventListener("keydown", keypressHandler);
   }
