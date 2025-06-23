@@ -28,6 +28,7 @@ body {
   max-width: 1200px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   /* height: 600px; */
@@ -216,13 +217,13 @@ textarea {
   top: 0px;
   /* left: 3px; */
   /* margin: 5px; */
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
   display: none;
   /* display: flex; */
   justify-content: center;
   align-items: center;
   height: 101%;
-  width: 50%;
+  width: 100%;
   min-width: 200px;
   z-index: 1;
 }
