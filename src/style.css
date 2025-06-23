@@ -26,7 +26,10 @@ body {
   /* background-color: black; */
   /* width: 90.5%; */
   max-width: 1200px;
-  /* display: flex; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
   /* height: 600px; */
   transition: background 1s ease;
 }
@@ -81,12 +84,12 @@ textarea {
 }
 .statusContainer {
   background-color: white;
-  width: 300px;
+  min-width: 300px;
   justify-self: center;
   border: solid black 3px;
   border-radius: 45px;
   text-decoration: wavy;
-  margin: 0 30px 30px 30px;
+  margin: auto 30px;
   box-shadow: 7px 7px 20px 0px rgba(0, 0, 0, 0.9);
   font-size: 16px;
   /* transform: scale(1);
@@ -256,8 +259,8 @@ textarea {
 
 .themeBtn {
   box-shadow: none;
-  height: 80px;
-  min-width: 100px;
+  height: 70px;
+  min-width: 70px;
   border: solid 5px black;
   border-radius: 100%;
   z-index: 11;
@@ -265,7 +268,7 @@ textarea {
 }
 
 .themeBtn:hover {
-  transform: scale(1.5);
+  transform: scale(1.25);
 }
 
 #themeGreen {
