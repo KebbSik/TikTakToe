@@ -263,6 +263,7 @@ function ShowMarkSelector(player) {
   if (keypressHandler) {
     document.removeEventListener("keydown", keypressHandler);
     markSelector.removeEventListener("click", backdropClickHandler);
+    hiddenInput.removeEventListener("blur", inputBlurHandler);
   }
 
   const closeSelector = () => {
@@ -270,6 +271,8 @@ function ShowMarkSelector(player) {
     hiddenInput.blur();
     document.removeEventListener("keydown", keypressHandler);
     markSelector.removeEventListener("click", backdropClickHandler);
+    hiddenInput.removeEventListener("blur", inputBlurHandler);
+    hiddenInput.oninput = null;
     keypressHandler = null;
   };
 
@@ -296,11 +299,21 @@ function ShowMarkSelector(player) {
     }
   };
 
+  const inputBlurHandler = () => {
+    // Wait a tiny bit in case the user is tapping another element
+    setTimeout(() => {
+      if (document.activeElement !== hiddenInput) {
+        closeSelector();
+      }
+    }, 150);
+  };
+
   // Add listeners
   document.addEventListener("keydown", keypressHandler);
   markSelector.addEventListener("click", backdropClickHandler);
+  hiddenInput.addEventListener("blur", inputBlurHandler);
 
-  // Mobile keyboard input
+  // Mobile input listener
   hiddenInput.oninput = (e) => {
     const char = e.target.value;
     if (isValidKey(char)) {
