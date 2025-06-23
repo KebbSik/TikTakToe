@@ -249,6 +249,9 @@ function ShowChangeMarks() {
   resetEventListener(backOptionsBtn, ShowOptions);
 }
 
+// Function imporoved with chatGBT's help
+// i had huge problem to force keyboard to appear on mobile
+
 function ShowMarkSelector(player) {
   markSelector.style.display = "flex";
 
@@ -256,30 +259,56 @@ function ShowMarkSelector(player) {
   hiddenInput.value = "";
   hiddenInput.focus();
 
+  // Clear old listeners
   if (keypressHandler) {
     document.removeEventListener("keydown", keypressHandler);
+    markSelector.removeEventListener("click", backdropClickHandler);
   }
+
+  const closeSelector = () => {
+    markSelector.style.display = "none";
+    hiddenInput.blur();
+    document.removeEventListener("keydown", keypressHandler);
+    markSelector.removeEventListener("click", backdropClickHandler);
+    keypressHandler = null;
+  };
+
+  const isValidKey = (key) => /^[a-zA-Z0-9]$/.test(key);
 
   keypressHandler = (event) => {
     const key = event.key;
 
     if (key === "Escape") {
-      markSelector.style.display = "none";
-      document.removeEventListener("keydown", keypressHandler);
-      keypressHandler = null;
+      closeSelector();
       return;
     }
-    if (/^[a-zA-Z0-9]$/.test(key)) {
-      marks[player] = key.toUpperCase();
-      markSelector.style.display = "none";
-      ShowChangeMarks();
 
-      document.removeEventListener("keydown", keypressHandler);
-      keypressHandler = null;
+    if (isValidKey(key)) {
+      marks[player] = key.toUpperCase();
+      closeSelector();
+      ShowChangeMarks();
     }
   };
 
+  const backdropClickHandler = (e) => {
+    if (e.target === markSelector) {
+      closeSelector();
+    }
+  };
+
+  // Add listeners
   document.addEventListener("keydown", keypressHandler);
+  markSelector.addEventListener("click", backdropClickHandler);
+
+  // Mobile keyboard input
+  hiddenInput.oninput = (e) => {
+    const char = e.target.value;
+    if (isValidKey(char)) {
+      marks[player] = char.toUpperCase();
+      closeSelector();
+      ShowChangeMarks();
+    }
+  };
 }
 
 function ShowchangeTheme() {
